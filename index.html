@@ -141,7 +141,7 @@ render()}
 $('#nav').onclick=e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll('section').forEach(s=>s.classList.remove('on'));$('#t-'+t).classList.add('on');document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b==e.target));render()};
 $('#th').onclick=()=>{const d=document.documentElement,c=d.dataset.theme||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'),n=c=='dark'?'light':'dark';d.dataset.theme=n;try{localStorage.setItem('tl-theme',n)}catch(e){}render()};
 try{const t=localStorage.getItem('tl-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
-const DR=[['🚗','Лада',5e5,'Такси-заказы: 1–5 тыс. ₸'],['🚙','Крузак',1e6,'Заказы: 10–20 тыс. ₸'],['🏠','Дом',5e6,'Аренда: 67 тыс. ₸ за ночь'],['🏢','Бизнес',12e6,'Доход 100–300 тыс. ₸']];
+const DR=[['🚗','Лада',1e5,'Такси-заказы: 1–5 тыс. ₸'],['🚙','Крузак',2e5,'Заказы: 10–20 тыс. ₸'],['🏠','Дом',5e5,'Аренда: 67 тыс. ₸ за ночь'],['🏢','Бизнес',999000,'Доход 100–300 тыс. ₸']];
 const GU=[['Семья с детьми',.05],['Студенты',.45],['Командировочный',.1],['Компания друзей',.3],['Молодожёны',.08]],MT=['Ремонт кассы','Налоговый сбор','Охрана','Реклама бизнеса','Уборка'];
 const G={l:120,c:Array(16).fill(null)};
 function renderGrid(){$('#gr').innerHTML=G.c.map((v,i)=>`<button class="cell ${v==null?'':v>0?'w':'l'}" onclick="cellGo(${i})" ${v==null?'':'disabled'}>${v==null?'?':(v>0?'+':'−')+Math.abs(v).toFixed(0)}</button>`).join('')}
